@@ -1,15 +1,4 @@
 <?xml version="1.0"?>
-
-
-<!--
-©2018 Salvatore F. Pileggi and Alexey Voinov
-
-This work is licensed under the Creative Commons Attribution 4.0 International License. 
-To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
--->
-
-
-
 <rdf:RDF xmlns="http://www.uts.edu.au/PERSWADE#"
      xml:base="http://www.uts.edu.au/PERSWADE"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -77,6 +66,15 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
         <owl:inverseOf rdf:resource="http://www.uts.edu.au/PERSWADE#developed_within"/>
         <rdfs:domain rdf:resource="http://www.uts.edu.au/PERSWADE#Research_Centre"/>
         <rdfs:range rdf:resource="http://www.uts.edu.au/PERSWADE#Research_Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#FORcode -->
+
+    <owl:ObjectProperty rdf:about="http://www.uts.edu.au/PERSWADE#FORcode">
+        <rdfs:subPropertyOf rdf:resource="http://www.uts.edu.au/PERSWADE#related_to"/>
+        <rdfs:range rdf:resource="http://www.uts.edu.au/PERSWADE#FOR"/>
     </owl:ObjectProperty>
     
 
@@ -237,6 +235,16 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     
 
 
+    <!-- http://www.uts.edu.au/PERSWADE#funder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.uts.edu.au/PERSWADE#funder">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Project"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.uts.edu.au/PERSWADE#name -->
 
     <owl:DatatypeProperty rdf:about="http://www.uts.edu.au/PERSWADE#name">
@@ -262,6 +270,14 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     <owl:DatatypeProperty rdf:about="http://www.uts.edu.au/PERSWADE#source_url">
         <rdfs:subPropertyOf rdf:resource="http://www.uts.edu.au/PERSWADE#url"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.uts.edu.au/PERSWADE#title">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -364,6 +380,36 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#DataSet">
         <owl:equivalentClass rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
         <usageNote>Generic dataset.</usageNote>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#FOR -->
+
+    <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#FOR"/>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#FOR_division -->
+
+    <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#FOR_division">
+        <rdfs:subClassOf rdf:resource="http://www.uts.edu.au/PERSWADE#FOR"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#FOR_field -->
+
+    <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#FOR_field">
+        <rdfs:subClassOf rdf:resource="http://www.uts.edu.au/PERSWADE#FOR_group"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#FOR_group -->
+
+    <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#FOR_group">
+        <rdfs:subClassOf rdf:resource="http://www.uts.edu.au/PERSWADE#FOR_division"/>
     </owl:Class>
     
 
@@ -614,6 +660,14 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     
 
 
+    <!-- http://www.uts.edu.au/PERSWADE#Keyword -->
+
+    <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#Keyword">
+        <owl:equivalentClass rdf:resource="http://www.uts.edu.au/PERSWADE#Research_Field"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.uts.edu.au/PERSWADE#Modeling -->
 
     <owl:Class rdf:about="http://www.uts.edu.au/PERSWADE#Modeling">
@@ -814,10 +868,48 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
     
 
 
+    <!-- http://www.uts.edu.au/PERSWADE#Green_Economy -->
+
+    <owl:NamedIndividual rdf:about="http://www.uts.edu.au/PERSWADE#Green_Economy">
+        <rdf:type rdf:resource="http://www.uts.edu.au/PERSWADE#Application_Area"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#Green_Logistics -->
+
+    <owl:NamedIndividual rdf:about="http://www.uts.edu.au/PERSWADE#Green_Logistics">
+        <rdf:type rdf:resource="http://www.uts.edu.au/PERSWADE#Application_Area"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#KnowledgeGraphs_DataArena -->
+
+    <owl:NamedIndividual rdf:about="http://www.uts.edu.au/PERSWADE#KnowledgeGraphs_DataArena">
+        <rdf:type rdf:resource="http://www.uts.edu.au/PERSWADE#Research_Project"/>
+        <adopts_method rdf:resource="http://www.uts.edu.au/PERSWADE#Data_Visualization"/>
+        <developed_within rdf:resource="http://www.uts.edu.au/PERSWADE#PERSWADE"/>
+        <title>Knowledge Graphs in the UTS Data Arena</title>
+        <year rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2018</year>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.uts.edu.au/PERSWADE#PERSWADE -->
 
     <owl:NamedIndividual rdf:about="http://www.uts.edu.au/PERSWADE#PERSWADE">
         <rdf:type rdf:resource="http://www.uts.edu.au/PERSWADE#Research_Centre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.uts.edu.au/PERSWADE#ParticipatoryModeling_Tools -->
+
+    <owl:NamedIndividual rdf:about="http://www.uts.edu.au/PERSWADE#ParticipatoryModeling_Tools">
+        <rdf:type rdf:resource="http://www.uts.edu.au/PERSWADE#Scientific_Contribution"/>
+        <related_to rdf:resource="http://www.uts.edu.au/PERSWADE#Participatory_Modeling"/>
+        <DOI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1016/j.envsoft.2018.08.028</DOI>
     </owl:NamedIndividual>
     
 
@@ -912,5 +1004,5 @@ To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0
 
 
 
-<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
 
